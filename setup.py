@@ -3,13 +3,13 @@
 
 import setuptools
 
-REQUIRED = ["pandas"]
+REQUIRED = ["pandas","sklearn","seaborn"]
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 
 setuptools.setup(
     name="lambdata_crawftv",
-    version="0.0.1",
+    version="0.0.2",
     author="crawftv",
     description="Data Science helper functions",
     long_description=LONG_DESCRIPTION,
