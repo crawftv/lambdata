@@ -10,6 +10,8 @@ twine = "*"
 sklearn = "*"
 seaborn = "*"
 twine = "*"
+scikit-learn = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.7"
