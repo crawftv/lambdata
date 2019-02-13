@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="lambdata_crawftv",
-    version="0.0.9",
+    version="0.0.13",
     author="crawftv",
     description="Data Science helper functions",
     long_description=LONG_DESCRIPTION,
