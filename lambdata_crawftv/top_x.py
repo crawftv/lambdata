@@ -1,8 +1,10 @@
 import pandas as pd
 
 
-"""returns a dataframe with a new column inplace  """
 def top_x(df, original_df_column, top_x_values): 
+    """
+    returns a dataframe with a new column inplace
+    """
     assert (type(top_x_values)==int), "top_x_values is not an int"
     assert (top_x_values > 0), "top_x_values needs to be an int greater than 0"
     assert (type(df)==pd.DataFrame), "df needs to be a pandas dataframe"

@@ -13,6 +13,12 @@ class Test(unittest.TestCase):
     def test_improper(self):
         with self.assertRaises(TypeError):
             top_x()
+        with self.assertRaises(TypeError):
+            top_x(df)
+        with self.assertRaises(TypeError):
+            top_x(df,'n')
+          
+
 
 if __name__ == '__main__':
     unittest.main()
