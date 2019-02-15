@@ -1,10 +1,16 @@
 import pandas as pd
-import numpy as np
 
-"""return the top_x_values most common values of original_df_column of df in order"""
-def top_x(df, original_df_column, top_x_values) -> list: 
-    return list(df[original_df_column].value_counts().head(top_x_values).index)
 
-df = pd.DataFrame(np.matrix([1,1,1,1,2,2,3,3,3,4,5,5,5,5,5]).T, columns=['n'])
+"""returns a dataframe with a new column inplace  """
+def top_x(df, original_df_column, top_x_values): 
+    assert (type(top_x_values)==int), "top_x_values is not an int"
+    assert (top_x_values > 0), "top_x_values needs to be an int greater than 0"
+    assert (type(df)==pd.DataFrame), "df needs to be a pandas dataframe"
+    assert (original_df_column in df.columns.values), "name of original_df_column not in the DataFrame"
+    l = list(df[original_df_column].value_counts().head(top_x_values).index)
+    new_column_name = "top_"+str(top_x_values)+"_from_"+str(original_df_column)
+    df[new_column_name] = df[original_df_column].apply(lambda x: x in l)
+    return df
 
-assert top_x(df,'n',3) == [5, 1, 3]
+
+
